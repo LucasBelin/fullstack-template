@@ -1,0 +1,8 @@
+CREATE DATABASE demo;
+USE demo;
+
+CREATE TABLE text (
+  id INT NOT NULL AUTO_INCREMENT,
+  text varchar(4096) NOT NULL,
+  PRIMARY KEY (id)
+);
