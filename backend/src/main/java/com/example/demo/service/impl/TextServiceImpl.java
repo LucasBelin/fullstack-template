@@ -10,7 +10,9 @@ import com.example.demo.model.Text;
 import com.example.demo.repository.TextRepository;
 import com.example.demo.service.TextService;
 
-import static com.example.demo.exception.ExceptionMessageConstants.TEXT_ID_NOT_FOUND;;
+import static com.example.demo.exception.ExceptionMessageConstants.TEXT_ID_NOT_FOUND;
+
+import java.util.List;;
 
 @Service
 public class TextServiceImpl implements TextService {
@@ -20,6 +22,11 @@ public class TextServiceImpl implements TextService {
 
     @Autowired
     private TextMapper textMapper;
+
+    @Override
+    public List<Text> getAllTexts() {
+        return textRepository.findAll();
+    }
 
     @Override
     public Text getText(Long id) {

@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +25,11 @@ public class TextController {
     
     @Autowired
     private TextFacade textFacade;
+
+    @GetMapping
+    public List<TextDto> getAllTexts() {
+        return textFacade.getAllTexts();
+    }
 
     @GetMapping(value="/{textId}")
     public TextDto getText(@PathVariable Long textId) {

@@ -1,5 +1,7 @@
 package com.example.demo.facade.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.TextDto;
@@ -18,6 +20,11 @@ public class TextFacadeImpl implements TextFacade {
     public TextFacadeImpl(final TextMapper textMapper, final TextService textService) {
         this.textMapper = textMapper;
         this.textService = textService;
+    }
+
+    @Override
+    public List<TextDto> getAllTexts() {
+        return textMapper.mapToTextDtoList(textService.getAllTexts());
     }
 
     @Override

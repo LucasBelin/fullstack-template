@@ -1,5 +1,7 @@
 package com.example.demo.mapper;
 
+import java.util.List;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 
@@ -14,4 +16,6 @@ public interface TextMapper {
     Text toEntity(TextDto textDto);
 
     void updateEntity(TextDto textDto, @MappingTarget Text text);
+
+    List<TextDto> mapToTextDtoList(List<Text> allTexts);
 }
