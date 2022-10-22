@@ -40,8 +40,8 @@ public class TextFacadeImpl implements TextFacade {
     }
 
     @Override
-    public TextDto updateText(Long id, TextDto textDto) {
-        Text text = textService.getText(id);
+    public TextDto updateText(TextDto textDto) {
+        Text text = textService.getText(textDto.getId());
         textMapper.updateEntity(textDto, text);
         Text updatedText = textService.updateText(text);
         return textMapper.toDto(updatedText);

@@ -12,7 +12,7 @@ public interface TextFacade {
     
     TextDto createText(TextDto textDto);
     
-    TextDto updateText(Long id, TextDto textDto);
+    TextDto updateText(TextDto textDto);
     
     void deleteText(Long id);
 
