@@ -33,9 +33,9 @@ function TextComponent() {
   return (
     <div className="flex gap-10">
       <div>
-        <h2 className="text-white text-2xl font-medium mb-4 text-center">
-          Texts in database :
-        </h2>
+        <h2 className="text-white text-2xl font-medium mb-4 text-center">Texts in database :</h2>
+        {texts.length === 0 && <h3 className="text-slate-400 text-s font-medium mb-4 text-center">No data</h3>}
+
         <div className="max-h-64 overflow-y-auto min-w-[500px] scrollbar-thin scrollbar-thumb-white hover:scrollbar-thumb-slate-300">
           <ul className="list-decimal ml-8 flex flex-col gap-2">
             {texts?.map(text => (
@@ -69,13 +69,7 @@ function TextComponent() {
 
         <div className="flex gap-2">
           <div className="relative">
-            <input
-              type="text"
-              id="text-input"
-              ref={inputTextRef}
-              className="text-input peer"
-              placeholder=" "
-            />
+            <input type="text" id="text-input" ref={inputTextRef} className="text-input peer" placeholder=" " />
             <label htmlFor="text-input" className="text-input-label">
               Enter some text
             </label>
